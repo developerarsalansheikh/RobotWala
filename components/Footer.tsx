@@ -151,12 +151,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/collaborations/school" className="hover:text-cyan-300 transition-colors">
+                <Link href="/collaborations#partnered-schools" className="hover:text-cyan-300 transition-colors">
                   School AI Labs (₹5 Lakh+)
                 </Link>
               </li>
               <li>
-                <Link href="/collaborations/college" className="hover:text-cyan-300 transition-colors">
+                <Link href="/collaborations#partnered-colleges" className="hover:text-cyan-300 transition-colors">
                   College Centres of Excellence
                 </Link>
               </li>

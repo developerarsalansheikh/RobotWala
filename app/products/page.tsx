@@ -23,6 +23,8 @@ export default function ProductsPage() {
       description:
         "Fully autonomous service android with interactive HD touch interface, SLAM navigation, and multilingual conversational AI for hospitality, corporate reception, and exhibitions.",
       image: "/lucy-robot.jpg",
+      cta: "Request a Demo",
+      ctaHref: "/contact?subject=Request%20a%20Demo%20-%20LUCY%20Humanoid#contact-form",
       highlights: [
         "Autonomous SLAM navigation & real-time obstacle avoidance",
         "Integrated capacitive touch display & conversational voice AI",
@@ -38,6 +40,8 @@ export default function ProductsPage() {
       description:
         "Dual-core ESP32 IoT controller board equipped with 8 optocoupler-isolated relays, terminal blocks, and telemetry status LEDs for smart home and industrial appliance automation.",
       image: "/kit-iot-automation.jpg",
+      cta: "Get a Quote",
+      ctaHref: "/contact?subject=Get%20a%20Quote%20-%20Smart%20Automation%20Board#contact-form",
       highlights: [
         "High-performance ESP32-S3 IoT module with Wi-Fi & Bluetooth",
         "8-channel heavy-duty isolated relays for multi-load switching",
@@ -53,6 +57,8 @@ export default function ProductsPage() {
       description:
         "All-in-one educational prototyping shield featuring an integrated 16x2 LCD display, ultrasonic distance sensor, DHT climate module, buzzer, and Arduino core interface.",
       image: "/kit-sensor-board.jpg",
+      cta: "Talk to an Engineer",
+      ctaHref: "/contact?subject=Talk%20to%20an%20Engineer%20-%20Sensor%20Hub#contact-form",
       highlights: [
         "Onboard 16x2 backlit LCD screen & ultrasonic telemetry radar",
         "Plug-and-play Arduino shield form factor with zero loose wiring",
@@ -68,6 +74,8 @@ export default function ProductsPage() {
       description:
         "Modular wheeled robotic platform engineered for autonomous navigation, optical line-tracking, ultrasonic obstacle avoidance, and programmable servo articulation.",
       image: "/kit-robotics-car.jpg",
+      cta: "Get a Quote",
+      ctaHref: "/contact?subject=Get%20a%20Quote%20-%20Robotic%20Car%20Kit#contact-form",
       highlights: [
         "Precision multi-sensor optical array for high-speed line tracking",
         "Ultrasonic obstacle avoidance & servo-driven radar head",
@@ -120,7 +128,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* 2. PRODUCTS GRID (Compact Screen-Size Cards, No Tech Specs) */}
+      {/* 2. PRODUCTS GRID (Compact Screen-Size Cards, Structured Information) */}
       <section className="relative px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProducts.map((product, idx) => (
@@ -163,8 +171,8 @@ export default function ProductsPage() {
                   {product.description}
                 </p>
 
-                {/* Feature Highlights (No Technical Specification Table) */}
-                <div className="space-y-2 font-sans">
+                {/* Feature Highlights / Specifications */}
+                <div className="space-y-2 font-sans mb-6">
                   {product.highlights.map((hl, hIdx) => (
                     <div key={hIdx} className="flex items-start gap-2 text-xs text-[#A1A1AA]">
                       <CheckCircle className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -173,6 +181,14 @@ export default function ProductsPage() {
                   ))}
                 </div>
               </div>
+
+              {/* Direct Action Button */}
+              <Link
+                href={product.ctaHref}
+                className="w-full inline-flex items-center justify-center py-2.5 px-4 rounded-xl bg-[#0e1626] hover:bg-cyan-400 hover:text-slate-950 text-[#F5F5F5] border border-slate-700/80 font-sans font-semibold text-xs uppercase tracking-wider transition-all duration-200 active:scale-95 cursor-pointer mt-2"
+              >
+                <span>{product.cta}</span>
+              </Link>
             </ScrollReveal>
           ))}
         </div>
@@ -192,10 +208,10 @@ export default function ProductsPage() {
                 Our embedded systems team builds tailored autonomous hardware and custom sensors for specialized commercial payloads.
               </p>
               <Link
-                href="/contact"
+                href="/contact?subject=Talk%20to%20an%20Engineer#contact-form"
                 className="inline-flex items-center justify-center px-8 py-3 bg-cyan-400 hover:bg-cyan-300 text-slate-950 font-sans font-bold text-xs uppercase tracking-widest rounded-xl shadow-[0_0_20px_rgba(6,182,212,0.35)] transition-all active:scale-95 relative z-10 cursor-pointer"
               >
-                <span>Talk to Engineering</span>
+                <span>Talk to an Engineer</span>
               </Link>
             </div>
           </ScrollReveal>
