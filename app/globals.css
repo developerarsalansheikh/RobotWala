@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #030303;
+  --foreground: #F5F5F5;
+  --text-primary: #F5F5F5;
+  --text-secondary: #A1A1AA;
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+body {
+  color: #A1A1AA;
+  background: var(--background);
+  font-family: var(--font-inter), 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: hidden;
+  /* ── Premium Dot Matrix Background ── */
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-sora), 'Sora', sans-serif;
+  color: #F5F5F5;
+}
+
+h1 {
+  font-weight: 700;
+  line-height: 1.12;
+}
+
+h2 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+p,
+li,
+span,
+label,
+input,
+textarea,
+a,
+nav {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+}
+
+p {
+  font-weight: 400;
+}
+
+button,
+.btn {
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+/* Custom Webkit Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.10);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.45);
+}
+
+/* ── Smooth pulse for ambient glows ── */
+@keyframes subtle-pulse {
+
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.28;
+    transform: scale(1.06);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 10s ease-in-out infinite;
+}
+
+/* ── Floating robot levitation ── */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: float 7s ease-in-out infinite;
+}
+
+/* ── Globe logo floating animations (staggered) ── */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes float-4 {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-9px); }
+}
+
+.animate-float-1 { animation: float-1 4s ease-in-out infinite; }
+.animate-float-2 { animation: float-2 5s ease-in-out infinite 0.8s; }
+.animate-float-3 { animation: float-3 4.5s ease-in-out infinite 1.5s; }
+.animate-float-4 { animation: float-4 5.5s ease-in-out infinite 0.4s; }
+
+/* ── Slow orbital spin ── */
+@keyframes slow-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: slow-rotate 130s linear infinite;
+}
+
+/* ── Shimmer sweep for CTA buttons ── */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  animation: shimmer 2.4s infinite;
+}
+
+/* ── Word reveal animation for headlines ── */
+@keyframes wordReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ── Hyper-Premium Glassmorphism Card ── */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.022);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-interactive {
+  background: rgba(255, 255, 255, 0.022);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-interactive:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(6, 182, 212, 0.3);
+  box-shadow: 0 32px 64px -20px rgba(0, 0, 0, 0.85),
+    0 0 40px -12px rgba(6, 182, 212, 0.2);
+  transform: translateY(-4px);
+}
+
+/* ── Solid Accent Text (No gradients per guidelines) ── */
+.text-neon-gradient {
+  color: #06b6d4;
+}
+
+/* ── Futuristic Glowing Button ── */
+.btn-futuristic-primary {
+  position: relative;
+  background: linear-gradient(135deg, #06b6d4, #3b82f6, #9333ea);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 24px rgba(6, 182, 212, 0.18);
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.btn-futuristic-primary:hover {
+  box-shadow: 0 0 40px rgba(6, 182, 212, 0.5), 0 8px 30px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Section enterprise container shorthand ── */
+.enterprise-container {
+  max-width: 80rem;
+  /* 1280px = 7xl */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .enterprise-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .enterprise-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+}
