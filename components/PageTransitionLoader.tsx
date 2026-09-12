@@ -18,12 +18,12 @@ export default function PageTransitionLoader() {
       const timer = setTimeout(() => {
         setLoading(false);
         setProgress(0);
-      }, 300);
+      }, 250);
       return () => clearTimeout(timer);
     }
   }, [pathname, searchParams]);
 
-  // Intercept click on internal links
+  // Intercept click on internal links (exclude home page navigation where IntroAnimation handles it)
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
@@ -34,7 +34,7 @@ export default function PageTransitionLoader() {
       const href = anchor.getAttribute("href");
       const targetAttr = anchor.getAttribute("target");
 
-      // Only handle internal relative links (not external, not new tab, not hash only)
+      // Only handle internal relative links (not external, not new tab, not hash only, not home page)
       if (
         href &&
         !href.startsWith("http") &&
@@ -42,11 +42,11 @@ export default function PageTransitionLoader() {
         !href.startsWith("tel:") &&
         !href.startsWith("#") &&
         targetAttr !== "_blank" &&
-        href !== pathname
+        href !== pathname &&
+        href !== "/" // Home page has its own dedicated preloader
       ) {
-        // Start loading bar immediately
         setLoading(true);
-        setProgress(20);
+        setProgress(25);
 
         if (progressTimerRef.current) clearInterval(progressTimerRef.current);
         progressTimerRef.current = setInterval(() => {
@@ -59,13 +59,13 @@ export default function PageTransitionLoader() {
           });
         }, 150);
 
-        // Fallback auto-complete after 4s in case route doesn't change
+        // Fallback auto-complete after 3.5s in case route doesn't change
         if (timerRef.current) clearTimeout(timerRef.current);
         timerRef.current = setTimeout(() => {
           setLoading(false);
           setProgress(0);
           if (progressTimerRef.current) clearInterval(progressTimerRef.current);
-        }, 4000);
+        }, 3500);
       }
     };
 
@@ -78,16 +78,19 @@ export default function PageTransitionLoader() {
     };
   }, [pathname]);
 
+  // Never render on home page so it never clashes with the home preloader
+  if (pathname === "/") return null;
+
   if (!loading && progress === 0) return null;
 
   return (
-    /* ── Top Futuristic Laser Progress Bar ── */
+    /* ── Top Futuristic Laser Progress Bar (Sleek, Non-Intrusive) ── */
     <div className="fixed top-0 left-0 right-0 z-[999999] h-[3px] bg-cyan-950/40 pointer-events-none">
       <div
-        className="h-full bg-gradient-to-r from-cyan-500 via-blue-400 to-cyan-300 transition-all duration-200 ease-out shadow-[0_0_12px_#06b6d4,0_0_24px_rgba(6,182,212,0.8)]"
+        className="h-full bg-gradient-to-r from-cyan-500 via-blue-400 to-cyan-300 transition-all duration-200 ease-out shadow-[0_0_15px_#06b6d4,0_0_30px_rgba(6,182,212,0.8)]"
         style={{
           width: `${progress}%`,
-          transition: progress === 100 ? "width 0.2s ease-out, opacity 0.3s ease-out 0.1s" : "width 0.3s ease-out",
+          transition: progress === 100 ? "width 0.2s ease-out, opacity 0.25s ease-out 0.05s" : "width 0.25s ease-out",
           opacity: progress === 100 ? 0 : 1,
         }}
       />

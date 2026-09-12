@@ -181,12 +181,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             {/* Left Side: Vision Image — slides in from LEFT on scroll */}
             <ScrollReveal direction="left" className="w-full">
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
-                <div className="relative w-full h-72 sm:h-96 md:h-[480px] overflow-hidden">
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.7)] border border-slate-700/60 bg-[#FAFAFA]">
+                <div className="relative w-full h-72 sm:h-96 md:h-[440px] overflow-hidden flex items-center justify-center p-6 sm:p-10">
                   <img
-                    src="/about-vision.jpg"
+                    src="/about-vision.png"
                     alt="ROBOTWALA Vision"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>
@@ -273,12 +273,12 @@ export default function AboutPage() {
 
             {/* Right Side: Mission Image — slides in from RIGHT on scroll (opposite of Vision) */}
             <ScrollReveal direction="right" className="w-full">
-              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
-                <div className="relative w-full h-72 sm:h-96 md:h-[480px] overflow-hidden">
+              <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.7)] border border-slate-700/60 bg-[#FAFAFA]">
+                <div className="relative w-full h-72 sm:h-96 md:h-[440px] overflow-hidden flex items-center justify-center p-6 sm:p-10">
                   <img
-                    src="/about-mission.jpg"
+                    src="/about-mission.png"
                     alt="ROBOTWALA Mission"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               </div>

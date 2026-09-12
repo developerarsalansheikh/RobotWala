@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import type { Metadata } from 'next';
-import { Sora, Inter } from 'next/font/google';
+import { Sora, Inter, Outfit, Space_Grotesk, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import IntroAnimation from '@/components/IntroAnimation';
 import Navbar from '@/components/Navbar';
@@ -19,6 +19,27 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk',
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta-sans',
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
@@ -59,7 +80,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/robotwala-logo.png" />
       </head>
       <body
-        className={`${inter.variable} ${sora.variable} font-sans bg-[#030303] text-[#A1A1AA] antialiased selection:bg-cyan-400 selection:text-black overflow-x-hidden min-h-screen flex flex-col justify-between`}
+        className={`${inter.variable} ${sora.variable} ${outfit.variable} ${spaceGrotesk.variable} ${plusJakartaSans.variable} font-sans bg-[#030303] text-[#A1A1AA] antialiased selection:bg-cyan-400 selection:text-black overflow-x-hidden min-h-screen flex flex-col justify-between`}
       >
         <IntroAnimation>
           {/* Top Page Transition Loader & Laser Progress Bar */}
