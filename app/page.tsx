@@ -319,13 +319,14 @@ export default function HomePage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center relative z-10 pt-28 sm:pt-32 md:pt-36">
-          {/* Top Clean Subtitle */}
-          <p className="font-medium text-xs sm:text-sm uppercase tracking-widest text-cyan-400 mb-4">
-            Next-Gen Autonomous Intelligence &amp; Robotics
-          </p>
+          {/* Top Clean Subtitle - Moved slightly up with electric cyan badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/[0.08] border border-cyan-400/30 text-cyan-300 font-medium text-xs sm:text-sm uppercase tracking-[0.2em] -mt-3 sm:-mt-5 mb-6 shadow-[0_0_20px_rgba(6,182,212,0.2)] backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#06b6d4]" />
+            <span>Next-Gen Autonomous Intelligence &amp; Robotics</span>
+          </div>
 
           {/* Main Headline - Animated Sequential 3-Line Headlines */}
-          <div className="w-full max-w-5xl mb-6 min-h-[140px] sm:min-h-[200px] md:min-h-[250px] lg:min-h-[320px] flex items-center justify-center">
+          <div className="w-full max-w-5xl mb-9 sm:mb-11 min-h-[140px] sm:min-h-[200px] md:min-h-[250px] lg:min-h-[320px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={headlineIndex}
@@ -356,8 +357,8 @@ export default function HomePage() {
             </AnimatePresence>
           </div>
 
-          {/* Subtitle - Inter 400 with spacious line-height */}
-          <p className="font-sans font-normal text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-3xl mb-10 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
+          {/* Subtitle - Inter 400 with spacious line-height - Moved slightly down */}
+          <p className="font-sans font-normal text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-3xl mb-12 sm:mb-14 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
             Let&apos;s Innovate &amp; Learn Beyond Boundaries with India&apos;s leading AI, Automation, and cognitive humanoid robotics pioneer.
           </p>
 
