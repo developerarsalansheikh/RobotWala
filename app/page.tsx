@@ -46,12 +46,6 @@ export default function HomePage() {
       highlightLine: 2,
     },
     {
-      line1: "ENGINEERING",
-      line2: "THE",
-      line3: "FUTURE",
-      highlightLine: 3,
-    },
-    {
       line1: "POWERING",
       line2: "REAL-WORLD",
       line3: "ROBOTICS",
@@ -308,12 +302,12 @@ export default function HomePage() {
           </video>
 
           {/* Mobile: Specifically Composed Vertical High-Tech Neural Backdrop */}
-          {/* <img
+          <img
             src="/hero-mobile-bg.jpg"
             alt="Robotwala Autonomous AI & Robotics Background"
             className="block md:hidden w-full h-full min-w-full min-h-full object-cover object-center brightness-100 contrast-100 saturate-100 pointer-events-none"
             style={{ objectPosition: "center center" }}
-          /> */}
+          />
 
           {/* Ambient corner glows to eliminate dark corner shading */}
           <div className="absolute -left-24 top-1/4 w-96 h-96 bg-cyan-500/[0.12] blur-[130px] rounded-full pointer-events-none" />
@@ -346,16 +340,16 @@ export default function HomePage() {
                 <span className="block">{heroHeadlines[headlineIndex].line1}</span>
                 <span
                   className={`block ${heroHeadlines[headlineIndex].highlightLine === 2
-                      ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
-                      : ""
+                    ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
+                    : ""
                     }`}
                 >
                   {heroHeadlines[headlineIndex].line2}
                 </span>
                 <span
                   className={`block ${heroHeadlines[headlineIndex].highlightLine === 3
-                      ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
-                      : ""
+                    ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
+                    : ""
                     }`}
                 >
                   {heroHeadlines[headlineIndex].line3}
