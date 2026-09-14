@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import ScrollReveal, { StaggerContainer, StaggerItem } from "@/components/ScrollReveal";
 import RotatingOrbCollaborations from "@/components/RotatingOrbCollaborations";
 import {
@@ -30,6 +31,42 @@ import {
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<string>("AI & Robotics");
+
+  const heroHeadlines = [
+    {
+      line1: "ENGINEERING",
+      line2: "TOMORROW'S",
+      line3: "ROBOTICS",
+      highlightLine: 2,
+    },
+    {
+      line1: "BUILDING",
+      line2: "INTELLIGENT",
+      line3: "MACHINES",
+      highlightLine: 2,
+    },
+    {
+      line1: "ENGINEERING",
+      line2: "THE",
+      line3: "FUTURE",
+      highlightLine: 3,
+    },
+    {
+      line1: "POWERING",
+      line2: "REAL-WORLD",
+      line3: "ROBOTICS",
+      highlightLine: 2,
+    },
+  ];
+
+  const [headlineIndex, setHeadlineIndex] = useState<number>(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeadlineIndex((prev) => (prev + 1) % heroHeadlines.length);
+    }, 3800);
+    return () => clearInterval(timer);
+  }, [heroHeadlines.length]);
 
   useEffect(() => {
     const saved = localStorage.getItem("activeTab");
@@ -255,15 +292,16 @@ export default function HomePage() {
     <div className="w-full flex flex-col bg-[#030303] text-white">
       {/* ── 1. HERO SECTION WITH BACKGROUND VIDEO ── */}
       <section className="relative min-h-screen flex items-center justify-center -mt-16 sm:-mt-20 pb-20 md:pb-24 overflow-hidden border-b border-slate-800">
-        {/* Background Looping Video - Crystal Clear & Unobstructed */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
+        {/* Background Looping Video - Crystal Clear, Unobstructed & Centered */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden z-0 flex items-center justify-center pointer-events-none">
           <video
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
-            className="w-full h-full object-cover brightness-100 contrast-100 saturate-100"
+            className="w-full h-full min-w-full min-h-full object-cover object-center brightness-100 contrast-100 saturate-100 pointer-events-none"
+            style={{ objectPosition: "center center" }}
           >
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
@@ -285,14 +323,39 @@ export default function HomePage() {
             Next-Gen Autonomous Intelligence &amp; Robotics
           </p>
 
-          {/* Main Headline - Sora 700 with tight letter spacing */}
-          <h1 className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-[-0.035em] text-[#F5F5F5] leading-[1.06] max-w-5xl mb-6 drop-shadow-[0_10px_35px_rgba(0,0,0,0.95)]">
-            <span className="block">ENGINEERING</span>
-            <span className="block text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]">
-              TOMORROW&apos;S
-            </span>
-            <span className="block">ROBOTICS</span>
-          </h1>
+          {/* Main Headline - Animated Sequential 3-Line Headlines */}
+          <div className="w-full max-w-5xl mb-6 min-h-[128px] sm:min-h-[192px] md:min-h-[230px] lg:min-h-[306px] flex items-center justify-center">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={headlineIndex}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -14 }}
+                transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
+                className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-[-0.035em] text-[#F5F5F5] leading-[1.06] w-full text-center drop-shadow-[0_10px_35px_rgba(0,0,0,0.95)]"
+              >
+                <span className="block">{heroHeadlines[headlineIndex].line1}</span>
+                <span
+                  className={`block ${
+                    heroHeadlines[headlineIndex].highlightLine === 2
+                      ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
+                      : ""
+                  }`}
+                >
+                  {heroHeadlines[headlineIndex].line2}
+                </span>
+                <span
+                  className={`block ${
+                    heroHeadlines[headlineIndex].highlightLine === 3
+                      ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
+                      : ""
+                  }`}
+                >
+                  {heroHeadlines[headlineIndex].line3}
+                </span>
+              </motion.h1>
+            </AnimatePresence>
+          </div>
 
           {/* Subtitle - Inter 400 with spacious line-height */}
           <p className="font-sans font-normal text-base sm:text-lg md:text-xl text-[#A1A1AA] leading-relaxed max-w-3xl mb-10 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
