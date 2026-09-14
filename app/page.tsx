@@ -300,12 +300,18 @@ export default function HomePage() {
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
 
-          {/* Mobile Image */}
-          <img
-            src="/hero-mobile-bg.jpg"
-            alt="Robotwala Autonomous AI & Robotics Background"
-            className="block md:hidden w-full h-full object-cover object-center brightness-100 contrast-100 saturate-100"
-          />
+          {/* Mobile Image Container */}
+          <div className="block md:hidden absolute inset-0 w-full h-full flex items-center justify-center overflow-hidden pointer-events-none">
+            <img
+              src="/hero-mobile-bg.jpg"
+              alt="Robotwala Autonomous AI & Robotics Background"
+              className="w-full h-full object-cover object-[center_15%] scale-[0.80] brightness-[0.85] contrast-[1.05] saturate-[1.05]"
+            />
+            {/* Seamless edge blending to prevent any hard image borders */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#030303]/80 via-transparent to-[#030303] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#030303]/50 via-transparent to-[#030303]/50 pointer-events-none" />
+            <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#030303] via-[#030303] to-transparent pointer-events-none" />
+          </div>
 
           {/* Ambient corner glows to eliminate dark corner shading */}
           <div className="absolute -left-24 top-1/4 w-96 h-96 bg-cyan-500/[0.12] blur-[130px] rounded-full pointer-events-none" />
@@ -314,8 +320,8 @@ export default function HomePage() {
           <div className="absolute -right-20 bottom-10 w-80 h-80 bg-blue-500/[0.08] blur-[120px] rounded-full pointer-events-none" />
 
           {/* Seamless top & bottom edge blending only */}
-          <div className="absolute top-0 inset-x-0 h-20 bg-gradient-to-b from-[#030303]/50 to-transparent pointer-events-none" />
-          <div className="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-[#030303] via-[#030303]/40 to-transparent pointer-events-none" />
+          <div className="absolute top-0 inset-x-0 h-24 bg-gradient-to-b from-[#030303] to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 inset-x-0 h-28 bg-gradient-to-t from-[#030303] via-[#030303]/60 to-transparent pointer-events-none" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center relative z-10 pt-28 sm:pt-32 md:pt-36">
