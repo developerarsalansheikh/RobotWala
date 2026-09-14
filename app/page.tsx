@@ -325,7 +325,7 @@ export default function HomePage() {
           </p>
 
           {/* Main Headline - Animated Sequential 3-Line Headlines */}
-          <div className="w-full max-w-5xl mb-6 min-h-[128px] sm:min-h-[192px] md:min-h-[230px] lg:min-h-[306px] flex items-center justify-center">
+          <div className="w-full max-w-5xl mb-6 min-h-[140px] sm:min-h-[200px] md:min-h-[250px] lg:min-h-[320px] flex items-center justify-center">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={headlineIndex}
@@ -333,7 +333,7 @@ export default function HomePage() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
-                className="font-heading font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-[-0.035em] text-[#F5F5F5] leading-[1.06] w-full text-center drop-shadow-[0_10px_35px_rgba(0,0,0,0.95)]"
+                className="font-heading font-bold text-[2.65rem] sm:text-[3.9rem] md:text-[4.8rem] lg:text-[5.75rem] uppercase tracking-[-0.035em] text-[#F5F5F5] leading-[1.06] w-full text-center drop-shadow-[0_10px_35px_rgba(0,0,0,0.95)]"
               >
                 <span className="block">{heroHeadlines[headlineIndex].line1}</span>
                 <span
@@ -357,7 +357,7 @@ export default function HomePage() {
           </div>
 
           {/* Subtitle - Inter 400 with spacious line-height */}
-          <p className="font-sans font-normal text-base sm:text-lg md:text-xl text-[#A1A1AA] leading-relaxed max-w-3xl mb-10 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+          <p className="font-sans font-normal text-base sm:text-lg md:text-xl text-white leading-relaxed max-w-3xl mb-10 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
             Let&apos;s Innovate &amp; Learn Beyond Boundaries with India&apos;s leading AI, Automation, and cognitive humanoid robotics pioneer.
           </p>
 
