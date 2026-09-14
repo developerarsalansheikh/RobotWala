@@ -79,7 +79,7 @@ export default function HomePage() {
     setActiveTab(tabName);
     try {
       localStorage.setItem("activeTab", tabName);
-    } catch {}
+    } catch { }
   };
 
   const categories = [
@@ -292,19 +292,28 @@ export default function HomePage() {
     <div className="w-full flex flex-col bg-[#030303] text-white">
       {/* ── 1. HERO SECTION WITH BACKGROUND VIDEO ── */}
       <section className="relative min-h-screen flex items-center justify-center -mt-16 sm:-mt-20 pb-20 md:pb-24 overflow-hidden border-b border-slate-800">
-        {/* Background Looping Video - Crystal Clear, Unobstructed & Centered */}
+        {/* Background Visual: Desktop Video & Mobile-Optimized Neural Backdrop */}
         <div className="absolute inset-0 w-full h-full overflow-hidden z-0 flex items-center justify-center pointer-events-none">
+          {/* Desktop: Looping Hero Video */}
           <video
             autoPlay
             loop
             muted
             playsInline
             preload="metadata"
-            className="w-full h-full min-w-full min-h-full object-cover object-center brightness-100 contrast-100 saturate-100 pointer-events-none"
+            className="hidden md:block w-full h-full min-w-full min-h-full object-cover object-center brightness-100 contrast-100 saturate-100 pointer-events-none"
             style={{ objectPosition: "center center" }}
           >
             <source src="/hero-video.mp4" type="video/mp4" />
           </video>
+
+          {/* Mobile: Specifically Composed Vertical High-Tech Neural Backdrop */}
+          {/* <img
+            src="/hero-mobile-bg.jpg"
+            alt="Robotwala Autonomous AI & Robotics Background"
+            className="block md:hidden w-full h-full min-w-full min-h-full object-cover object-center brightness-100 contrast-100 saturate-100 pointer-events-none"
+            style={{ objectPosition: "center center" }}
+          /> */}
 
           {/* Ambient corner glows to eliminate dark corner shading */}
           <div className="absolute -left-24 top-1/4 w-96 h-96 bg-cyan-500/[0.12] blur-[130px] rounded-full pointer-events-none" />
@@ -336,20 +345,18 @@ export default function HomePage() {
               >
                 <span className="block">{heroHeadlines[headlineIndex].line1}</span>
                 <span
-                  className={`block ${
-                    heroHeadlines[headlineIndex].highlightLine === 2
+                  className={`block ${heroHeadlines[headlineIndex].highlightLine === 2
                       ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
                       : ""
-                  }`}
+                    }`}
                 >
                   {heroHeadlines[headlineIndex].line2}
                 </span>
                 <span
-                  className={`block ${
-                    heroHeadlines[headlineIndex].highlightLine === 3
+                  className={`block ${heroHeadlines[headlineIndex].highlightLine === 3
                       ? "text-cyan-400 drop-shadow-[0_0_35px_rgba(6,182,212,0.4)]"
                       : ""
-                  }`}
+                    }`}
                 >
                   {heroHeadlines[headlineIndex].line3}
                 </span>
