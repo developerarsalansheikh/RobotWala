@@ -117,6 +117,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/gallery" className="hover:text-cyan-300 transition-colors flex items-center gap-1">
+                  <span>Innovation Gallery</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/events" className="hover:text-cyan-300 transition-colors flex items-center gap-1">
+                  <span>Events &amp; Arenas</span>
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="hover:text-cyan-300 transition-colors flex items-center gap-1">
                   <span>Contact &amp; Careers</span>
                 </Link>

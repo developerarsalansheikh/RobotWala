@@ -1,4 +1,4 @@
-import EventsPage from "@/app/gallery/page";
+import EventsClient from "./EventsClient";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,4 +7,7 @@ export const metadata: Metadata = {
     "Discover upcoming and past robotics workshops, school competitions, and tech expos hosted by ROBOTWALA across India.",
 };
 
-export default EventsPage;
+export default function EventsPage() {
+  return <EventsClient />;
+}
+

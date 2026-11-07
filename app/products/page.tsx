@@ -16,15 +16,15 @@ export default function ProductsPage() {
   const productsList = [
     {
       id: "lucy",
-      title: "LUCY Humanoid AI Robot",
+      title: "LUCY",
       category: "Robots",
-      tag: "Flagship Autonomous Service Robot",
+      tag: "Flagship Service Robot",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "Fully autonomous service android with interactive HD touch interface, SLAM navigation, and multilingual conversational AI for hospitality, corporate reception, and exhibitions.",
+        "One step solution for your organisation to evolve into AI & Robotics.",
       image: "/lucy-robot.jpg",
       cta: "Request a Demo",
-      ctaHref: "/contact?subject=Request%20a%20Demo%20-%20LUCY%20Humanoid#contact-form",
+      ctaHref: "/contact?subject=Request%20a%20Demo%20-%20LUCY#contact-form",
       highlights: [
         "Autonomous SLAM navigation & real-time obstacle avoidance",
         "Integrated capacitive touch display & conversational voice AI",
@@ -32,33 +32,33 @@ export default function ProductsPage() {
       ],
     },
     {
-      id: "home-automation",
-      title: "Next-Gen Smart Automation Board",
+      id: "robotics-kit",
+      title: "Robotics Kit",
       category: "Kits",
-      tag: "Smart IoT Relay Controller",
+      tag: "STEM Robotics & Autonomy",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "Dual-core ESP32 IoT controller board equipped with 8 optocoupler-isolated relays, terminal blocks, and telemetry status LEDs for smart home and industrial appliance automation.",
-      image: "/kit-iot-automation.jpg",
+        "Complete Robotics kit to build, program, and experiment.",
+      image: "/kit-robotics-car.jpg",
       cta: "Get a Quote",
-      ctaHref: "/contact?subject=Get%20a%20Quote%20-%20Smart%20Automation%20Board#contact-form",
+      ctaHref: "/contact?subject=Get%20a%20Quote%20-%20Robotics%20Kit#contact-form",
       highlights: [
-        "High-performance ESP32-S3 IoT module with Wi-Fi & Bluetooth",
-        "8-channel heavy-duty isolated relays for multi-load switching",
-        "Instant cloud dashboard, smartphone app & voice-assistant integration",
+        "Precision multi-sensor optical array for high-speed line tracking",
+        "Ultrasonic obstacle avoidance & servo-driven radar head",
+        "Includes complete open-source Arduino / C++ code & project manual",
       ],
     },
     {
       id: "smart-automation",
-      title: "ROBOTWALA Sensor & STEM Dev Hub",
+      title: "Smart Automation",
       category: "Kits",
-      tag: "Interactive Sensor Lab",
+      tag: "Hands-on IoT & Automation",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "All-in-one educational prototyping shield featuring an integrated 16x2 LCD display, ultrasonic distance sensor, DHT climate module, buzzer, and Arduino core interface.",
+        "Hands-on automation and IoT kit with real-world projects.",
       image: "/kit-sensor-board.jpg",
       cta: "Talk to an Engineer",
-      ctaHref: "/contact?subject=Talk%20to%20an%20Engineer%20-%20Sensor%20Hub#contact-form",
+      ctaHref: "/contact?subject=Talk%20to%20an%20Engineer%20-%20Smart%20Automation#contact-form",
       highlights: [
         "Onboard 16x2 backlit LCD screen & ultrasonic telemetry radar",
         "Plug-and-play Arduino shield form factor with zero loose wiring",
@@ -66,20 +66,20 @@ export default function ProductsPage() {
       ],
     },
     {
-      id: "robotics-kit",
-      title: "Autonomous Robotic Car Construction Kit",
+      id: "home-automation",
+      title: "Home Automation",
       category: "Kits",
-      tag: "STEM Robotics & Autonomy",
+      tag: "Smart Living IoT Controller",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "Modular wheeled robotic platform engineered for autonomous navigation, optical line-tracking, ultrasonic obstacle avoidance, and programmable servo articulation.",
-      image: "/kit-robotics-car.jpg",
+        "Beginner-friendly smart home automation learning kit.",
+      image: "/kit-iot-automation.jpg",
       cta: "Get a Quote",
-      ctaHref: "/contact?subject=Get%20a%20Quote%20-%20Robotic%20Car%20Kit#contact-form",
+      ctaHref: "/contact?subject=Get%20a%20Quote%20-%20Home%20Automation#contact-form",
       highlights: [
-        "Precision multi-sensor optical array for high-speed line tracking",
-        "Ultrasonic obstacle avoidance & servo-driven radar head",
-        "Includes complete open-source Arduino / C++ code & project manual",
+        "High-performance ESP32-S3 IoT module with Wi-Fi & Bluetooth",
+        "8-channel heavy-duty isolated relays for multi-load switching",
+        "Instant cloud dashboard, smartphone app & voice-assistant integration",
       ],
     },
   ];
@@ -153,13 +153,13 @@ export default function ProductsPage() {
                 </div>
 
                 {/* Visual Thumbnail (Responsive & Clean Contain) */}
-                <div className="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden mb-4 bg-[#050811] border border-slate-800 flex items-center justify-center p-2">
+                <div className="relative w-full h-44 sm:h-48 rounded-xl overflow-hidden mb-4 bg-white border border-slate-700/60 flex items-center justify-center p-3">
                   <img
                     src={product.image}
                     alt={product.title}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-contain filter drop-shadow-md hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain filter drop-shadow hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 

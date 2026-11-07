@@ -90,6 +90,10 @@ export default function HomePage() {
       tag: "Flagship Robotics",
       ctaHref: "/products#lucy",
       ctaText: "Explore Humanoid Systems",
+      image: "/lucy-robot.jpg",
+      imageLabel: "LUCY Humanoid Android",
+      imageFit: "object-contain" as const,
+      imageBg: "bg-[#f0f0f0]",
     },
     {
       name: "Automation",
@@ -104,6 +108,10 @@ export default function HomePage() {
       tag: "Enterprise IoT",
       ctaHref: "/products#kits",
       ctaText: "Explore Automation Kits",
+      image: "/kit-iot-automation.jpg",
+      imageLabel: "ESP32 IoT Relay Board",
+      imageFit: "object-contain" as const,
+      imageBg: "bg-white",
     },
     {
       name: "Drone Technology",
@@ -118,6 +126,10 @@ export default function HomePage() {
       tag: "UAV Systems",
       ctaHref: "/services",
       ctaText: "Explore Drone Tech",
+      image: "/drone-only.png",
+      imageLabel: "FPV Racing Drone",
+      imageFit: "object-cover" as const,
+      imageBg: "bg-black",
     },
     {
       name: "EdTech",
@@ -132,64 +144,65 @@ export default function HomePage() {
       tag: "K-12 & Higher Ed",
       ctaHref: "/collaborations#partnered-schools",
       ctaText: "Explore STEM Labs",
+      image: "/events/event-workshop.jpg",
+      imageLabel: "STEM Workshop Session",
+      imageFit: "object-cover" as const,
+      imageBg: "bg-black",
     },
   ];
 
   const products = [
     {
       id: "lucy",
-      title: "LUCY Humanoid",
+      title: "LUCY",
       category: "Robots",
       tag: "Flagship Android",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "Autonomous interactive humanoid assistant with cutting-edge conversational NLP, computer vision, and hospitality greeting capabilities.",
-      features: ["Bilingual NLP Engine", "3D LiDAR Navigation", "Emotion Detection"],
-      image: "/lucy.png",
+        "One step solution for your organisation to evolve into AI & Robotics.",
+      features: ["Autonomous Navigation", "Conversational AI", "Interactive Touch Display"],
+      image: "/lucy-robot.jpg",
       cta: "Explore LUCY",
       href: "/products#lucy",
     },
     {
-      id: "home-automation",
-      title: "Home Automation",
+      id: "robotics-kit",
+      title: "Robotics Kit",
       category: "Kits",
-      tag: "Smart Living IoT",
+      tag: "STEM Robotics",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "Next-generation IoT ecosystem offering intelligent lighting, thermal optimization, appliance safety, and voice controls.",
-      features: ["Zero-Latency Mesh", "Voice & App Control", "Power Optimization"],
-      image: null,
-      icon: Cpu,
-      cta: "View Kit Specs",
-      href: "/products#kits",
+        "Complete Robotics kit to build, program, and experiment.",
+      features: ["Autonomous Line Following", "Ultrasonic Obstacle Sensor", "Arduino & C++ Programmable"],
+      image: "/kit-robotics-car.jpg",
+      cta: "Explore Kit",
+      href: "/products#robotics-kit",
     },
     {
       id: "smart-automation",
       title: "Smart Automation",
       category: "Kits",
-      tag: "Industrial Grade",
+      tag: "IoT & Sensor Lab",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "Industrial-grade sensor hubs and robotic actuators tailored for automated assembly lines, predictive maintenance, and telemetry.",
-      features: ["CAN-Bus Protocols", "Predictive Diagnostics", "Fail-Safe Relays"],
-      image: null,
-      icon: Sliders,
-      cta: "Explore Systems",
-      href: "/products#kits",
+        "Hands-on automation and IoT kit with real-world projects.",
+      features: ["16x2 Backlit LCD Display", "Ultrasonic Radar & Buzzer", "DHT Environmental Sensor"],
+      image: "/kit-sensor-board.jpg",
+      cta: "Explore Kit",
+      href: "/products#smart-automation",
     },
     {
-      id: "robotics-kit",
-      title: "STEM Robotics Kit",
+      id: "home-automation",
+      title: "Home Automation",
       category: "Kits",
-      tag: "STEM Innovation",
+      tag: "Smart IoT Relays",
       badgeColor: "border-cyan-500/40 text-cyan-300 bg-cyan-500/10",
       description:
-        "Modular STEM robotics construction suite empowering students and makers to build autonomous rovers, bionics, and robotics machines.",
-      features: ["50+ Modular Sensors", "Python & C++ SDK", "Plug-and-Play Servos"],
-      image: null,
-      icon: Layers,
-      cta: "Get Started",
-      href: "/products#kits",
+        "Beginner-friendly smart home automation learning kit.",
+      features: ["ESP32 Dual-Core Controller", "8 Optocoupler Relays", "WiFi & App Cloud Control"],
+      image: "/kit-iot-automation.jpg",
+      cta: "Explore Kit",
+      href: "/products#home-automation",
     },
   ];
 
@@ -326,7 +339,7 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col items-center text-center relative z-10 pt-28 sm:pt-32 md:pt-36">
           {/* Top Clean Subtitle with electric cyan border */}
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-cyan-500/[0.08] border border-cyan-400/30 text-cyan-300 font-medium text-xs sm:text-sm uppercase tracking-[0.2em] mb-4 shadow-[0_0_20px_rgba(6,182,212,0.2)] backdrop-blur-sm">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-500/[0.08] border border-cyan-400/30 text-cyan-300 font-medium text-[10px] sm:text-xs uppercase tracking-[0.2em] mb-4 shadow-[0_0_20px_rgba(6,182,212,0.2)] backdrop-blur-sm">
             <span>Next-Gen Autonomous Intelligence &amp; Robotics</span>
           </div>
 
@@ -487,25 +500,26 @@ export default function HomePage() {
 
               {/* Right Visual Image Showcase */}
               <div className="lg:col-span-5 flex items-center justify-center">
-                <div className="relative w-full max-w-md h-72 sm:h-80 rounded-2xl overflow-hidden bg-black border border-slate-700/60 flex items-center justify-center shadow-[0_20px_45px_rgba(0,0,0,0.9)]">
+                <div className={`relative w-full max-w-md h-72 sm:h-80 rounded-2xl overflow-hidden border border-slate-700/60 flex items-center justify-center shadow-[0_20px_45px_rgba(0,0,0,0.9)] transition-all duration-300 ${selectedCategoryData.imageBg}`}>
                   <img
-                    src="/hero-robot.jpg"
-                    alt="ROBOTWALA Next-Gen Autonomous System"
+                    key={selectedCategoryData.image}
+                    src={selectedCategoryData.image}
+                    alt={selectedCategoryData.imageLabel}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${selectedCategoryData.imageFit} transition-all duration-300 p-${selectedCategoryData.imageFit === 'object-contain' ? '4' : '0'}`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080d17] via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080d17]/80 via-transparent to-transparent pointer-events-none" />
 
                   <div className="absolute top-4 left-4 px-3 py-1 rounded bg-[#080d17]/90 border border-slate-700 text-cyan-400 text-[10px] uppercase tracking-widest font-semibold font-sans">
-                    NEXT-GEN SYSTEM
+                    {selectedCategoryData.tag}
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4 text-left">
                     <span className="font-heading font-semibold text-lg text-[#F5F5F5] uppercase tracking-wide block mb-1">
-                      {selectedCategoryData.name}
+                      {selectedCategoryData.imageLabel}
                     </span>
-                    <span className="font-sans font-normal text-xs text-[#A1A1AA]">Enterprise Robotics &bull; Autonomous Architecture</span>
+                    <span className="font-sans font-normal text-xs text-[#A1A1AA]">{selectedCategoryData.name} &bull; ROBOTWALA</span>
                   </div>
                 </div>
               </div>
@@ -537,7 +551,7 @@ export default function HomePage() {
           {/* 4 Hardware Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {products.map((product, idx) => {
-              const Icon = product.icon || Cpu;
+              const Icon = (product as { icon?: React.ElementType }).icon || Cpu;
               return (
                 <ScrollReveal
                   key={product.id}
@@ -561,14 +575,14 @@ export default function HomePage() {
                     </div>
 
                     {/* Visual Media / Icon */}
-                    <div className="relative w-full h-44 rounded-2xl overflow-hidden mb-5 bg-black border border-slate-700/60 flex items-center justify-center">
+                    <div className="relative w-full h-44 sm:h-48 rounded-2xl overflow-hidden mb-5 bg-white border border-slate-700/60 flex items-center justify-center p-3 shadow-inner">
                       {product.image ? (
                         <img
                           src={product.image}
                           alt={product.title}
                           loading="lazy"
                           decoding="async"
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain filter drop-shadow hover:scale-105 transition-transform duration-300"
                         />
                       ) : (
                         <div className="flex flex-col items-center justify-center p-4 text-center">
@@ -580,7 +594,6 @@ export default function HomePage() {
                           </span>
                         </div>
                       )}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#080d17] via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     {/* Title & Desc */}
@@ -645,18 +658,18 @@ export default function HomePage() {
                 desc: "India's first bilingual conversational humanoid android.",
               },
               {
-                title: "ROBOTWALA Android",
-                category: "Robots",
-                tag: "Autonomous System",
+                title: "ROBOTWALA Autonomous Android",
+                category: "Robots & AI",
+                tag: "Next-Gen Android",
                 image: "/robotwala-main.png",
-                desc: "Next-gen autonomous android with 3D LiDAR navigation.",
+                desc: "Autonomous system with 3D LiDAR SLAM, neural compute, and obstacle avoidance.",
               },
               {
-                title: "Precision Drone UAV",
-                category: "Drones",
-                tag: "UAV Platform",
-                image: "/hero-robot.jpg",
-                desc: "High-altitude surveillance and payload delivery drone.",
+                title: "Precision FPV Flight Drone",
+                category: "Drones & Aerial",
+                tag: "High-Speed UAV",
+                image: "/drone-only.png",
+                desc: "High-precision agility quadcopter with tuned flight controller and carbon-fiber frame.",
               },
             ].map((item, idx) => (
               <ScrollReveal key={idx} direction="up" delay={idx * 0.12}>
@@ -665,17 +678,19 @@ export default function HomePage() {
                   className="group relative bg-[#0b111e] border border-slate-700/60 rounded-3xl overflow-hidden hover:border-cyan-400/50 hover:shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_30px_rgba(6,182,212,0.2)] transition-all duration-300 cursor-pointer block"
                 >
                   <div className="absolute top-0 left-0 right-0 h-[2px] bg-cyan-400/80" />
-                  <div className="relative w-full h-56 sm:h-60 overflow-hidden bg-black">
+                  <div className="relative w-full h-64 sm:h-72 md:h-80 overflow-hidden bg-black flex items-center justify-center p-1.5">
                     <img
                       src={item.image}
                       alt={item.title}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#080d17] via-black/30 to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 rounded-full bg-[#080d17]/90 backdrop-blur-md border border-cyan-500/30 text-[10px] uppercase tracking-widest font-semibold text-cyan-300 font-sans">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080d17] via-transparent to-transparent opacity-60 pointer-events-none" />
+                    
+                    {/* Top Left Category Badge */}
+                    <div className="absolute top-4 left-4 z-10">
+                      <span className="px-3 py-1 rounded-full bg-[#080d17]/90 backdrop-blur-md border border-cyan-500/30 text-[10px] uppercase tracking-widest font-semibold text-cyan-300 font-sans shadow-md">
                         {item.category}
                       </span>
                     </div>
@@ -693,6 +708,8 @@ export default function HomePage() {
               </ScrollReveal>
             ))}
           </div>
+
+
         </div>
       </section>
 

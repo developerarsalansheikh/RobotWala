@@ -97,11 +97,11 @@ export default function ServicesPage() {
             <div className="relative bg-[#0b111e] border border-slate-700/60 rounded-3xl p-6 sm:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-cyan-400/80" />
 
-              <div className="relative w-full h-80 rounded-2xl overflow-hidden bg-black border border-slate-700/60 flex items-center justify-center">
+              <div className="relative w-full h-96 sm:h-[440px] rounded-2xl overflow-hidden bg-black border border-slate-700/60 flex items-center justify-center p-2">
                 <img
-                  src="/lucy.png"
+                  src="/lucy-service.png"
                   alt="LUCY Humanoid Robot"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain filter drop-shadow-[0_15px_35px_rgba(0,0,0,0.9)] hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4 px-3 py-1 rounded bg-[#080d17]/90 border border-slate-700 text-cyan-300 text-[10px] uppercase tracking-widest font-semibold font-sans">
                   FLAGSHIP ANDROID

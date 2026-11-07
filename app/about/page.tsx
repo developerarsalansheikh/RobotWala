@@ -545,6 +545,12 @@ export default function AboutPage() {
                           {tag}
                         </span>
                       ))}
+                      <span
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 text-[10px] font-semibold uppercase tracking-wider"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                        <span>IIT Bombay Partner</span>
+                      </span>
                     </div>
                   </div>
 
